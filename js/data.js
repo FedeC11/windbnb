@@ -11,7 +11,14 @@ const getData = async () => {
 
   return data;
 }
+const getCity = (data) => {
+  let ciudades = data.map(elem =>elem.city)
+  ciudades = new Set(ciudades)
+  ciudades =[...ciudades]
+  return ciudades
+}
 
 export default {
-  getData
+  getData,
+  getCity
 }

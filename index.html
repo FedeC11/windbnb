@@ -40,7 +40,36 @@
     </div>
 
     <article class="d-flex rounded-4">
-      <p class="p-3 m-0 cursor-text">Add location</p>
+      <!-- este es el menu de arriba -->
+      <p class="p-3 m-0 cursor-text" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" >Finland</p>
+      <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasTopLabel">Edit your search</h5>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="card" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item ">
+                <p>LOCATION</p>
+                <p id="Title-bucar">Helsinki,Finland</p>
+              </li>
+              <li class="list-group-item">
+                <p>GUEST</p>
+                <p id="addGuest">Add guest</p>
+              </li>
+            </ul>
+          </div>
+          <form>
+            <ul class="list-Menu" example" id="opciones"></ul>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas"><span class="material-symbols-outlined">
+            search
+            </span>  Search</button>
+          </form>
+          
+        </div>
+      </div>
       <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none">Add guests</p>
       <!-- Icono Search de google Icons -->
       <span class="material-symbols-outlined text-danger p-3 pointer">
