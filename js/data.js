@@ -17,8 +17,14 @@ const getCity = (data) => {
   ciudades =[...ciudades]
   return ciudades
 }
+const filtrar=(arreglo, filtro) =>{
+  console.log(arreglo)
+  let filtered =arreglo.filter(elem =>elem.city === filtro)
+  return filtered;
+}
 
 export default {
   getData,
-  getCity
+  getCity,
+  filtrar
 }
