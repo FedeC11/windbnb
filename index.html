@@ -41,39 +41,61 @@
 
     <article class="d-flex rounded-4">
       <!-- este es el menu de arriba -->
-      <p class="p-3 m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"  >Finland</p>
+      <p class="p-3 m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" id="cityBoton" >Finland</p>
       <div class="offcanvas offcanvas-top h-75" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title edit-search" id="offcanvasTopLabel">Edit your search</h5>
           
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <!-- estos son los menus para filtros -->
         <div class="offcanvas-body">
+
           <div class="card mx-0 px-0 container-fluid">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <p class="location-guest mb-0">LOCATION</p>
-                <p class ="Title-buscar letra-Titulo mb-0">Helsinki,Finland</p>
+                <p class ="Title-buscar letra-Titulo mb-0" id="city">Helsinki,Finland</p>
               </li>
               <li class="list-group-item">
                 <p class="location-guest mb-0">GUEST</p>
-                <p id="addGuest" class="guest mb-0">Add guest</p>
+                <p id="contGuest" class="guest mb-0">Add guest</p>
               </li>
             </ul>
           </div>
           <form class="mt-4">
-            <ul class="list-Menu mb-5" example" id="opciones"></ul>
-            <div class="d-flex justify-content-center mt-2">
-              <button type="button" class="btn red" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
-                search
-                </span>  Search</button>
-            </div>
+            <ul class="list-Menu mb-5" example" id="opciones">
+              <div class="hidden" id="guestMenu">
+                <div class="mb-4">
+                  <p class="adults mb-0">Adults</p>
+                  <p class="range mb-0">Ages 13 or above</p>
+                  <div class="mt-2 d-flex flex-direction-row gap-3">
+                    <p class="border text-center mb-0 boxi" id="menosAdults">-</p>
+                    <p id="contAdults">0</p>
+                    <p class="border text-center boxi mb-0 pointer " id="masAdults">+</p>
+                  </div>
+                  </div>
+                  <div>
+                  <p class="adults mb-0">Children</p>
+                  <p class="range mb-0">Ages 13 or above</p>
+                  <div class=" mt-2 d-flex flex-direction-row gap-3">
+                    <p class="border text-center boxi mb-0" id="menosChildren">-</p>
+                    <p id="contChildren">0</p>
+                    <p class="border text-center boxi mb-0" id="masChildren">+</p>
+                  </div>
+              </div>
+            </ul>
+            
           
           </form>
-          
+          <div class="d-flex justify-content-center mt-2">
+            <button type="button" class="btn red" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
+              search
+              </span>  Search</button>
+          </div>
         </div>
       </div>
-      <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Add guests</p>
+      <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none m-0 cursor-text letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" id="addGuest" aria-controls="offcanvasTop">Add guests</p>
       <!-- Icono Search de google Icons -->
       <span class="material-symbols-outlined text-danger p-3 pointer">
         search

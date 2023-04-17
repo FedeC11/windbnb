@@ -33,37 +33,17 @@ const newCard =(obj) => {
 }
 const  insertCitys =(citys, donde) =>{
   const menu =$(donde)
+  const div=newEl('div')
+  div.setAttribute('id','cityMenu');
+
   citys.forEach( element => {
     const li =newEl('li')
     li.className="mb-3"
     li.innerHTML = `<a class="text-decoration-none text-reset lista" href="#${element}"><span class="material-symbols-outlined added">location_on </span> ${element}, Finland</a>`;
-    menu.appendChild(li)
-    return menu;
+    div.appendChild(li)
+    return div;
   });
-}
-const addGuest=(donde) =>{
-const menu=$(donde)
-console.log(menu)
-menu.innerHTML='';
-const divi= newEl('div')
-divi.innerHTML=`<div class="mb-4">
-<p class="adults mb-0">Adults</p>
-<p class="range mb-0">Ages 13 or above</p>
-<div class="mt-2 d-flex flex-direction-row gap-3">
-  <p class="border text-center mb-0 boxi" id="menosAdults">-</p>
-  <p id="contAdults">0</p>
-  <p class="border text-center boxi mb-0 pointer " id="masAdults">+</p>
-</div>
-</div>
-<div>
-<p class="adults mb-0">Children</p>
-<p class="range mb-0">Ages 13 or above</p>
-<div class=" mt-2 d-flex flex-direction-row gap-3">
-  <p class="border text-center boxi mb-0" id="menosChildren">-</p>
-  <p id="contChildren">0</p>
-  <p class="border text-center boxi mb-0" id="masChildren">+</p>
-</div>`
-menu.appendChild(divi)
+  menu.appendChild(div)
 }
 
 const muestraTarjetas= arre =>{
@@ -81,6 +61,5 @@ export default{
     $,
     insertCitys,
     tarjetas,
-    muestraTarjetas,
-    addGuest
+    muestraTarjetas
 }
