@@ -41,36 +41,39 @@
 
     <article class="d-flex rounded-4">
       <!-- este es el menu de arriba -->
-      <p class="p-3 m-0 cursor-text Title-buscar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" >Finland</p>
-      <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+      <p class="p-3 m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"  >Finland</p>
+      <div class="offcanvas offcanvas-top h-75" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasTopLabel">Edit your search</h5>
+          <h5 class="offcanvas-title edit-search" id="offcanvasTopLabel">Edit your search</h5>
           
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <div class="card" style="width: 18rem;">
+          <div class="card mx-0 px-0 container-fluid">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item ">
-                <p>LOCATION</p>
-                <p class ="Title-buscar">Helsinki,Finland</p>
+              <li class="list-group-item">
+                <p class="location-guest mb-0">LOCATION</p>
+                <p class ="Title-buscar letra-Titulo mb-0">Helsinki,Finland</p>
               </li>
               <li class="list-group-item">
-                <p>GUEST</p>
-                <p id="addGuest">Add guest</p>
+                <p class="location-guest mb-0">GUEST</p>
+                <p id="addGuest" class="guest mb-0">Add guest</p>
               </li>
             </ul>
           </div>
-          <form>
-            <ul class="list-Menu" example" id="opciones"></ul>
-          <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
-            search
-            </span>  Search</button>
+          <form class="mt-4">
+            <ul class="list-Menu mb-5" example" id="opciones"></ul>
+            <div class="d-flex justify-content-center mt-2">
+              <button type="button" class="btn red" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
+                search
+                </span>  Search</button>
+            </div>
+          
           </form>
           
         </div>
       </div>
-      <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none">Add guests</p>
+      <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Add guests</p>
       <!-- Icono Search de google Icons -->
       <span class="material-symbols-outlined text-danger p-3 pointer">
         search
@@ -79,14 +82,15 @@
   </header>
   <main>
     <div class="d-flex mt-5 justify-content-between">
-      <h1 class="fs-3">Stays in 
+      <h1 class="fs-3 title-buscador">Stays in 
+        <span class="Title-buscar title-buscador"></span>
         <!-- Aquí va el lugar -->
         <span id="place"></span>
       </h1>
       <p><span id="stays"></span> Stays</p>
     </div>
 
-    <section class="container text-center">
+    <section class="container ">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="Tarjetas">
 
         <!-- Aqui van los cards, cada uno debe llevar la clase 'col' -->
@@ -94,6 +98,7 @@
         
       </div>
     </section>
+    
   </main>
 </body>
 

@@ -10,3 +10,132 @@ font-family: 'Mulish', sans-serif;
 .pointer{
     cursor: pointer;
 }
+.superhost{
+    font-family: 'Montserrat', sans-serif ;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4F4F4F;
+    
+}
+.imagen{
+ aspect-ratio: 1/1;
+ height: 230.91px;
+ 
+}
+.imagen img{
+    object-fit: cover;
+    height: 230.92px;
+    
+
+}
+.type{
+    font-family: 'Montserrat', sans-serif ;
+    font-size: 14px;
+    color: #828282;
+    font-weight: 500;   
+}
+.material-symbols-outlinedd {
+    color: #EB5757;
+
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 40
+}
+.added{
+    color: #4F4F4F;
+    font-variation-settings:
+  'FILL' 1,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 40
+
+}
+.rating{
+    font-size: 14px;
+    color: #4F4F4F;
+    font-weight: 500; 
+}
+.card-content{
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 600;
+    color: #333333;
+    font-size: 16px;
+}
+.star{
+    display: flex;
+    width: 50px;
+    position: relative;
+    
+}
+
+.star span{
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+.title-buscador{
+    font-family: 'Montserrat', sans-serif ;
+    font-weight: 700;
+    font-size: 24px;
+    color: #333333;
+
+}
+.letra-Titulo{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333333;   
+}
+.location-guest{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 800;
+    font-size: 9px;
+    color: #333333;
+}
+.guest{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #BDBDBD; 
+}
+.edit-search{
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'Mulish', sans-serif;
+    color: #333333;
+}
+.lista{
+        font-family: 'Mulish', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #4F4F4F; 
+}
+.red{
+    background-color: #EB5757;
+    color: #F2F2F2;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+
+}
+.adults{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #4F4F4F; 
+}
+.range{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #BDBDBD; 
+}
+.boxi{
+    width: 20px;
+    height: 20px;
+    border-radius: 25%;
+}

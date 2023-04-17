@@ -4,7 +4,8 @@ import dom from "./dom.js";
 const botonFiltro =dom.$('#boton')
 const titleBuscar= document.querySelectorAll('.Title-buscar')
 const datos = await data.getData();
-
+const guest =dom.$('#addGuest')
+console.log(guest)
 /* datos.forEach(element => {
     const card = dom.newCard(element);
     dom.tarjetas.appendChild(card)
@@ -53,3 +54,43 @@ botonFiltro.addEventListener('click', () => {
     dom.muestraTarjetas(filtered)
     console.log(filtered)
 })
+guest.addEventListener("click", () =>{
+    dom.addGuest("#opciones")
+    
+})
+let contadorAdultos=0;
+ let contadorChildren=0;
+    const masAdults =dom.$('#masAdults')
+    const menosAdults =dom.$('#menosAdults')
+    const masChildren =dom.$('#masChildren')
+    const menosChildren =dom.$('#menosChildren')
+    console.log(masAdults)
+    const contAdults =dom.$('#contAdults')
+    const contChildren =dom.$('#contChildren');
+    
+    masAdults.addEventListener('Click',()=>{
+        contadorAdultos++;
+        console.log(contadorAdultos)
+        contAdults.innerHTML=contadorAdultos
+    })
+    menosAdults.addEventListener('Click',()=>{
+        console.log("entre")
+        if(contadorAdultos > 0){
+            contadorAdultos--;
+        }
+        contAdults.innerHTML=contadorAdultos
+    masChildren.addEventListener('Click',()=>{
+        contadorChildren++
+        contchildren.innerHTML=contadorAdultos
+    })
+    menosChildren.addEventListener('Click',()=>{
+        if(contadorChildren > 0){
+            contadorChildren--;
+        }
+        contChildren.innerHTML=contadorAdultos
+    })
+    })
+ 
+
+ 
+
