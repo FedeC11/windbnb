@@ -2,7 +2,7 @@ import data from "./data.js";
 import dom from "./dom.js";
 // boton del  filtro
 const botonFiltro =dom.$('#boton')
- //para menu de ciudades
+//para menu de ciudades
 const titleBuscar= document.querySelectorAll('.Title-buscar')
 // se leeen los datos de el json
 const datos = await data.getData();
@@ -12,20 +12,19 @@ const guest =dom.$('#addGuest')
 dom.muestraTarjetas(datos)
 //filtro de ciudades
 const ciudades =data.getCity(datos)
- //se inserta  ciudades
+//se inserta  ciudades
 dom.insertCitys(ciudades,'#opciones')
 //se seleccione guestMenu
 const guestMenu=dom.$('#guestMenu')
 //agregar el evento para menu correcto
-
-
 let filtered=null;
-const catMenu = [...dom.$('#opciones').children];
-
+//Filtro de ciudades
+let lista ="";
+const catMenu = [...dom.$('#cityMenu').children];
 catMenu.forEach(element => {
-     //agregar clase seleccionada
-    element.addEventListener('click',() =>{
-        let lista ="";
+//agregar clase seleccionada
+element.addEventListener('click',() =>{
+        
         titleBuscar.forEach(elem =>{
             let nomBus="";
             if(element.textContent.includes('Vaasa')){
@@ -51,7 +50,6 @@ catMenu.forEach(element => {
         
         }
         
-        filtered = data.filtrar(datos,lista)
         
         
     })
@@ -59,15 +57,10 @@ catMenu.forEach(element => {
 //este es el fitro de busqueda boton 
 const cityMenu=dom.$('#cityMenu')
 const cityBoton=dom.$('#cityBoton')
-//muestra tarjetas filtradas
-botonFiltro.addEventListener('click', () => {
-    dom.muestraTarjetas(filtered)
-})
 //oculta o muestra menu seleccionados
 const contGuest =dom.$('#contGuest')
 const city =dom.$('#city')
 guest.addEventListener("click", () =>{
-
     guestMenu.classList.remove('hidden')
     cityMenu.classList.add('hidden')
 })
@@ -88,36 +81,78 @@ city.addEventListener("click", () =>{
 })
 //contador de guest
 let contadorAdultos=0;
- let contadorChildren=0;
-    const masAdults =dom.$('#masAdults')
-    const menosAdults =dom.$('#menosAdults')
-    const masChildren =dom.$('#masChildren')
-    const menosChildren =dom.$('#menosChildren')
-    const contAdults =dom.$('#contAdults')
-    const contChildren =dom.$('#contChildren');
-    
-    masAdults.addEventListener('Click',()=>{
+let contadorChildren=0;
+const masAdults =dom.$('#masAdults')
+const menosAdults =dom.$('#menosAdults')
+const masChildren =dom.$('#masChildren')
+const menosChildren =dom.$('#menosChildren')
+const contAdults =dom.$('#contAdults')
+const contChildren =dom.$('#contChildren');
+let contadorGlobal=0;    
+masAdults.addEventListener('click',()=>{
+       if(contadorGlobal<10){
         contadorAdultos++;
-        console.log(contadorAdultos);
+        contadorGlobal++;
+       }
         contAdults.innerHTML=contadorAdultos
-    })
-    menosAdults.addEventListener('Click',()=>{
-        console.log("entre")
+        
+})
+menosAdults.addEventListener('click',()=>{
         if(contadorAdultos > 0){
             contadorAdultos--;
+            contadorGlobal--;
         }
         contAdults.innerHTML=contadorAdultos
-    masChildren.addEventListener('Click',()=>{
-        contadorChildren++
-        contchildren.innerHTML=contadorAdultos
-    })
-    menosChildren.addEventListener('Click',()=>{
+        
+})
+masChildren.addEventListener('click',()=>{
+        if(contadorGlobal<10){
+            contadorChildren++;
+            contadorGlobal++;
+           }
+        contChildren.innerHTML=contadorChildren
+        
+})
+menosChildren.addEventListener('click',()=>{
         if(contadorChildren > 0){
             contadorChildren--;
+            contadorGlobal--;
         }
-        contChildren.innerHTML=contadorAdultos
-    })
-    })
+        contChildren.innerHTML=contadorChildren
+        
+})
+//Filtro de guest
+let FiltroGuest=null;
+//muestra tarjetas filtradas
+botonFiltro.addEventListener('click', () => {
+    console.log(lista)
+    console.log(contadorGlobal)
+    if(lista !="" && contadorGlobal != 0){
+        console.log("entre con 2 variables")
+        let filtroDoble=null
+        filtered = data.filtrar(datos,lista,)
+        filtroDoble =data.FiltrarGuest(filtered,contadorGlobal)
+        dom.muestraTarjetas(filtroDoble)
+    }else if(lista!=""){
+        filtered=data.filtrar(datos,lista)
+        dom.muestraTarjetas(filtered)
+    }
+    else if(contadorGlobal!=0){
+        FiltroGuest=data.FiltrarGuest(datos,contadorGlobal) 
+        dom.muestraTarjetas(FiltroGuest)
+    }
+    else{
+        dom.muestraTarjetas(datos)
+    }
+    lista=""
+    contadorGlobal=0
+    contadorAdultos=0
+    contadorChildren=0
+    contChildren.innerHTML=contadorChildren
+    contAdults.innerHTML=contadorAdultos
+
+
+})
  
 
  

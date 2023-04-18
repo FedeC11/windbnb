@@ -49,9 +49,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <!-- estos son los menus para filtros -->
-        <div class="offcanvas-body">
+        <div class="offcanvas-body d-flex flex-column flex-md-row">
 
-          <div class="card mx-0 px-0 container-fluid">
+          <div class="card mx-0 px-0 container-fluid order-md-0 align-items-md-start ">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <p class="location-guest mb-0">LOCATION</p>
@@ -63,7 +63,7 @@
               </li>
             </ul>
           </div>
-          <form class="mt-4">
+          <form class="mt-4 order-md-2">
             <ul class="list-Menu mb-5" example" id="opciones">
               <div class="hidden" id="guestMenu">
                 <div class="mb-4">
@@ -88,7 +88,7 @@
             
           
           </form>
-          <div class="d-flex justify-content-center mt-2">
+          <div class="d-flex justify-content-center mt-2 order-md-1">
             <button type="button" class="btn red" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
               search
               </span>  Search</button>
