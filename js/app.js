@@ -21,11 +21,14 @@ let filtered=null;
 //Filtro de ciudades
 let lista ="";
 const catMenu = [...dom.$('#cityMenu').children];
+
 catMenu.forEach(element => {
 //agregar clase seleccionada
+
 element.addEventListener('click',() =>{
-        
+    
         titleBuscar.forEach(elem =>{
+            
             let nomBus="";
             if(element.textContent.includes('Vaasa')){
                 nomBus="Vaasa, Finland"
@@ -95,6 +98,8 @@ masAdults.addEventListener('click',()=>{
         contadorGlobal++;
        }
         contAdults.innerHTML=contadorAdultos
+        contGuest.textContent=`${contadorGlobal} guests`;
+        guest.textContent=`${contadorGlobal} guests`;
         
 })
 menosAdults.addEventListener('click',()=>{
@@ -103,6 +108,8 @@ menosAdults.addEventListener('click',()=>{
             contadorGlobal--;
         }
         contAdults.innerHTML=contadorAdultos
+        contGuest.textContent=`${contadorGlobal} guests`;
+        guest.textContent=`${contadorGlobal} guests`;
         
 })
 masChildren.addEventListener('click',()=>{
@@ -111,6 +118,8 @@ masChildren.addEventListener('click',()=>{
             contadorGlobal++;
            }
         contChildren.innerHTML=contadorChildren
+        contGuest.textContent=`${contadorGlobal} guests`;
+        guest.textContent=`${contadorGlobal} guests`;
         
 })
 menosChildren.addEventListener('click',()=>{
@@ -119,31 +128,38 @@ menosChildren.addEventListener('click',()=>{
             contadorGlobal--;
         }
         contChildren.innerHTML=contadorChildren
+        contGuest.textContent=`${contadorGlobal} guests`;
+        guest.textContent=`${contadorGlobal} guests`;
         
 })
 //Filtro de guest
 let FiltroGuest=null;
+let stays=0;
+const stays1=dom.$('#stays')
 //muestra tarjetas filtradas
 botonFiltro.addEventListener('click', () => {
-    console.log(lista)
-    console.log(contadorGlobal)
+    
     if(lista !="" && contadorGlobal != 0){
-        console.log("entre con 2 variables")
         let filtroDoble=null
         filtered = data.filtrar(datos,lista,)
         filtroDoble =data.FiltrarGuest(filtered,contadorGlobal)
+        stays = filtroDoble.length
         dom.muestraTarjetas(filtroDoble)
     }else if(lista!=""){
         filtered=data.filtrar(datos,lista)
+        stays=filtered.length
         dom.muestraTarjetas(filtered)
     }
     else if(contadorGlobal!=0){
         FiltroGuest=data.FiltrarGuest(datos,contadorGlobal) 
+        stays=FiltroGuest.length
         dom.muestraTarjetas(FiltroGuest)
     }
     else{
         dom.muestraTarjetas(datos)
+        stays=datos.length
     }
+    stays1.textContent=stays
     lista=""
     contadorGlobal=0
     contadorAdultos=0

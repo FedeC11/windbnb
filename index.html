@@ -49,10 +49,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <!-- estos son los menus para filtros -->
-        <div class="offcanvas-body d-flex flex-column flex-md-row">
-
-          <div class="card mx-0 px-0 container-fluid order-md-0 align-items-md-start ">
-            <ul class="list-group list-group-flush">
+        <div class="offcanvas-body row">
+          <div class="card col-md-10 mx-0 px-0 col-12  align-content-md-start">
+            <ul class="list-group list-group-flush d-flex flex-column flex-md-row align-content-md-start">
               <li class="list-group-item">
                 <p class="location-guest mb-0">LOCATION</p>
                 <p class ="Title-buscar letra-Titulo mb-0" id="city">Helsinki,Finland</p>
@@ -63,7 +62,8 @@
               </li>
             </ul>
           </div>
-          <form class="mt-4 order-md-2">
+          
+          <form class="mt-4 order-md-2 d-flex justify-content-center col-12">
             <ul class="list-Menu mb-5" example" id="opciones">
               <div class="hidden" id="guestMenu">
                 <div class="mb-4">
@@ -88,7 +88,7 @@
             
           
           </form>
-          <div class="d-flex justify-content-center mt-2 order-md-1">
+          <div class=" justify-content-center col-12 mt-2 order-md-1 col-md-2">
             <button type="button" class="btn red" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
               search
               </span>  Search</button>
@@ -105,9 +105,9 @@
   <main>
     <div class="d-flex mt-5 justify-content-between">
       <h1 class="fs-3 title-buscador">Stays in 
-        <span class="Title-buscar title-buscador"></span>
+        <span class="title-buscador"></span>
         <!-- Aquí va el lugar -->
-        <span id="place"></span>
+        <span class="Title-buscar" id="place"></span>
       </h1>
       <p><span id="stays"></span> Stays</p>
     </div>

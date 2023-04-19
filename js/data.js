@@ -22,7 +22,7 @@ const filtrar=(arreglo, filtro) =>{
   return filtered;
 }
 const FiltrarGuest=(arreglo,filtro)=>{
-  let filtered = arreglo.filter(elem =>elem.maxGuests===filtro)
+  let filtered = arreglo.filter(elem =>elem.maxGuests >= filtro)
   return filtered
 }
 
