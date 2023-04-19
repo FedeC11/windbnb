@@ -41,39 +41,63 @@
 
     <article class="d-flex rounded-4">
       <!-- este es el menu de arriba -->
-      <p class="p-3 m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"  >Finland</p>
+      <p class="p-3 m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" id="cityBoton" >Finland</p>
       <div class="offcanvas offcanvas-top h-75" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title edit-search" id="offcanvasTopLabel">Edit your search</h5>
           
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-          <div class="card mx-0 px-0 container-fluid">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
+        <!-- estos son los menus para filtros -->
+        <div class="offcanvas-body row flex-grow-0">
+
+          <div class="d-flex border rounded col-md-9 p-0 container-fluid row  ">
+            
+              <div class="col-12 col-md-6 border rounded">
                 <p class="location-guest mb-0">LOCATION</p>
-                <p class ="Title-buscar letra-Titulo mb-0">Helsinki,Finland</p>
-              </li>
-              <li class="list-group-item">
+                <p class ="Title-buscar letra-Titulo mb-0" id="city">Helsinki,Finland</p>
+              </div>
+              <div class="col-12 col-md-6 border rounded">
                 <p class="location-guest mb-0">GUEST</p>
-                <p id="addGuest" class="guest mb-0">Add guest</p>
-              </li>
-            </ul>
+                <p id="contGuest" class="guest mb-0">Add guest</p>
+              </div>
           </div>
-          <form class="mt-4">
-            <ul class="list-Menu mb-5" example" id="opciones"></ul>
-            <div class="d-flex justify-content-center mt-2">
-              <button type="button" class="btn red" data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
-                search
-                </span>  Search</button>
-            </div>
+          
+          <form class="mt-4 order-md-2 d-flex  col-12">
+            <div class="d-none d-md-block col-md-4"></div>
+            <ul class="list-Menu mb-5" example" id="opciones">
+              
+              <div class="hidden " id="guestMenu">
+                <div class="mb-4">
+                  <p class="adults mb-0">Adults</p>
+                  <p class="range mb-0">Ages 13 or above</p>
+                  <div class="mt-2 d-flex flex-direction-row gap-3">
+                    <p class="border text-center mb-0 boxi" id="menosAdults">-</p>
+                    <p id="contAdults">0</p>
+                    <p class="border text-center boxi mb-0 pointer " id="masAdults">+</p>
+                  </div>
+                  </div>
+                  <div>
+                  <p class="adults mb-0">Children</p>
+                  <p class="range mb-0">Ages 13 or above</p>
+                  <div class=" mt-2 d-flex flex-direction-row gap-3">
+                    <p class="border text-center boxi mb-0" id="menosChildren">-</p>
+                    <p id="contChildren">0</p>
+                    <p class="border text-center boxi mb-0" id="masChildren">+</p>
+                  </div>
+              </div>
+            </ul>
+            
           
           </form>
-          
+          <div class="d-flex justify-content-center col-12 mt-2 order-md-1 col-md-3  ms-2 ">
+            <button type="button" class="btn red " data-bs-dismiss="offcanvas" id="boton"><span class="material-symbols-outlined">
+              search
+              </span>  Search</button>
+          </div>
         </div>
       </div>
-      <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none m-0 cursor-text Title-buscar letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Add guests</p>
+      <p class="p-3 m-0 border-start border-end border-light-subtle user-select-none m-0 cursor-text letra-Titulo" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" id="addGuest" aria-controls="offcanvasTop">Add guests</p>
       <!-- Icono Search de google Icons -->
       <span class="material-symbols-outlined text-danger p-3 pointer">
         search
@@ -83,9 +107,9 @@
   <main>
     <div class="d-flex mt-5 justify-content-between">
       <h1 class="fs-3 title-buscador">Stays in 
-        <span class="Title-buscar title-buscador"></span>
+        <span class="title-buscador"></span>
         <!-- Aquí va el lugar -->
-        <span id="place"></span>
+        <span class="Title-buscar" id="place"></span>
       </h1>
       <p><span id="stays"></span> Stays</p>
     </div>

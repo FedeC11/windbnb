@@ -18,13 +18,17 @@ const getCity = (data) => {
   return ciudades
 }
 const filtrar=(arreglo, filtro) =>{
-  console.log(arreglo)
   let filtered =arreglo.filter(elem =>elem.city === filtro)
   return filtered;
+}
+const FiltrarGuest=(arreglo,filtro)=>{
+  let filtered = arreglo.filter(elem =>elem.maxGuests >= filtro)
+  return filtered
 }
 
 export default {
   getData,
   getCity,
-  filtrar
+  filtrar,
+  FiltrarGuest
 }
